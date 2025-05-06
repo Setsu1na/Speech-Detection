@@ -1,62 +1,96 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    line-height: 1.6;
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+    font-family: "Roboto", "Segoe UI", Helvetica, Arial, sans-serif; /* 优先使用 Roboto 字体 */
+    line-height: 1.7; /* 稍微增加行高 */
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f8;
+    /* color: #333; */
+    color: #37474f; /* 调整基础文字颜色，稍深一点 */
+    /* background-color: #f4f4f8; */
+    /* background-color: #f5f5f5; */ /* Material Design 常用的浅灰背景 */
+    background-color: #eceff1; /* 更柔和的浅蓝灰色背景 */
 }
 
 header {
-    background-color: #4a90e2; /* 蓝色调 */
+    /* background-color: #4a90e2; */ /* 蓝色调 */
+    /* background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%); */ /* 深蓝到中蓝渐变 */
+    background-color: #0d47a1; /* 使用深蓝作为基础色 */
+    background-image: 
+        linear-gradient(135deg, rgba(25, 118, 210, 0.8) 0%, rgba(13, 71, 161, 0) 60%), /* 添加一层浅色渐变增加层次 */
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), /* 微弱的水平线条 */
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); /* 微弱的垂直线条 */
+    background-size: cover, 40px 40px, 40px 40px; /* 控制线条大小 */
     color: #fff;
-    padding: 2rem 1rem 1rem 1rem;
+    padding: 3rem 1rem 1.5rem 1rem;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15); /* 稍微加深阴影 */
+    position: relative; /* 为了可能的伪元素 */
+    overflow: hidden; /* 隐藏可能溢出的效果 */
 }
 
 header h1 {
-    margin: 0 0 0.5rem 0;
-    font-size: 2.5rem;
+    margin: 0 0 0.8rem 0;
+    font-size: 2.8rem;
+    font-weight: 500; /* Material Design 风格的字重 */
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* 给标题加一点文字阴影 */
 }
 
 header p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
     opacity: 0.9;
 }
 
 header nav a {
-    color: #fff;
+    color: #e3f2fd; /* 浅蓝色导航链接 */
     text-decoration: none;
-    margin: 0 15px;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease;
+    margin: 0 20px;
+    padding: 8px 10px; /* 调整 padding */
+    border-bottom: 3px solid transparent; /* 底部边框加粗一点 */
+    transition: color 0.3s ease, border-bottom-color 0.3s ease, background-color 0.3s ease; /* 添加背景色过渡 */
+    font-weight: 500;
+    border-radius: 4px 4px 0 0; /* 给悬停背景加点形状 */
 }
 
 header nav a:hover {
-    border-bottom: 2px solid #fff;
+    /* border-bottom: 2px solid #fff; */
+    color: #ffffff; /* 悬停时变白 */
+    border-bottom-color: #81d4fa; /* 悬停时更亮的蓝色下划线 */
+    background-color: rgba(255, 255, 255, 0.1); /* 悬停时添加微妙的背景高亮 */
 }
 
 main {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    max-width: 1024px; /* 稍微加宽主内容区 */
+    margin: 3rem auto; /* 增加上下间距 */
+    padding: 0 1.5rem;
 }
 
 section {
     background-color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin-bottom: 3rem; /* 增加 section 间距 */
+    padding: 3rem; /* 增加内边距 */
+    border-radius: 10px; /* 稍大圆角 */
+    /* box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.15); */ /* Material Design 风格阴影 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06), 0 5px 15px rgba(0, 0, 0, 0.08); /* 更柔和扩散的阴影 */
+    border: 1px solid #dbe2e8; /* 调整边框颜色 */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* 添加 transform 过渡 */
+}
+
+section:hover {
+    /* box-shadow: 0 6px 12px rgba(0,0,0,0.1), 0 6px 12px rgba(0,0,0,0.15); */ /* 悬停时阴影加深 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08), 0 10px 25px rgba(0, 0, 0, 0.1); /* 悬停时更明显的阴影 */
+    transform: translateY(-3px); /* 悬停时轻微上浮 */
 }
 
 h2 {
-    color: #4a90e2;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    /* color: #4a90e2; */
+    color: #0d47a1; /* 调整标题颜色为更深的蓝 */
+    border-bottom: 3px solid #90caf9; /* 调整下划线颜色和粗细 */
+    padding-bottom: 1rem; /* 增加下内边距 */
+    margin-bottom: 2.5rem; /* 增加下外边距 */
+    font-size: 1.9rem; /* 调整字号 */
+    font-weight: 500;
 }
 
 #features ul {
@@ -65,96 +99,162 @@ h2 {
 }
 
 #features li {
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem; /* 增加列表项间距 */
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 顶部对齐，防止图标和文字垂直居中 */
+    font-size: 1.1rem; /* 调整字体大小 */
+    line-height: 1.8; /* 调整列表项行高 */
 }
 
 .emoji {
-    font-size: 1.5rem;
-    margin-right: 10px;
+    font-size: 1.7rem; /* 调整图标大小 */
+    margin-right: 18px; /* 调整右间距 */
     display: inline-block;
-    width: 30px; /* 固定宽度对齐 */
+    width: 40px; /* 固定宽度对齐 */
     text-align: center;
+    color: #1976d2; /* 图标使用主色调 */
+    line-height: 1.8; /* 确保和文本行高一致 */
+    vertical-align: top; /* 尝试顶部对齐 */
+    margin-top: 2px; /* 细微调整 */
 }
 
 .button {
     display: inline-block;
-    background-color: #4a90e2;
+    /* background-color: #4a90e2; */
+    background-color: #1976d2; /* 中蓝色按钮 */
     color: #fff;
-    padding: 12px 25px;
+    padding: 14px 30px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    border-radius: 4px; /* 稍小的圆角 */
+    font-weight: 500;
+    text-transform: uppercase; /* Material Button 风格 */
+    letter-spacing: 1px; /* 调整字间距 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* 添加 transform 过渡 */
     text-align: center;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* 添加按钮阴影 */
 }
 
 .button:hover {
-    background-color: #357abd;
+    /* background-color: #357abd; */
+    background-color: #1565c0; /* 悬停时深蓝色 */
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3); /* 悬停时阴影加深 */
+    transform: translateY(-2px); /* 悬停时按钮轻微上浮 */
 }
 
 .note {
     font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.5rem;
+    color: #757575; /* 调整注释颜色 */
+    margin-top: 1rem;
 }
 
 .screenshot-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem; /* 图片间距 */
-    justify-content: center;
+    display: grid; /* 改用 Grid 布局 */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 调整最小宽度 */
+    gap: 2rem; /* 加大图片间距 */
 }
 
 .screenshot-gallery figure {
     margin: 0;
     text-align: center;
-    flex-basis: calc(33% - 1rem); /* 每行大约3个，减去gap */
-    min-width: 200px;
+    background-color: #fafafa; /* 给 figure 加个浅背景 */
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.3s ease;
+}
+
+.screenshot-gallery figure:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .screenshot-gallery img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
+    /* border: 1px solid #ddd; */
+    border: 1px solid #e0e0e0; /* 统一边框颜色 */
+    border-radius: 6px;
+    margin-bottom: 1rem; /* 加大图片和图注间距 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* 添加图片阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.screenshot-gallery img:hover {
+    transform: scale(1.03); /* 悬停放大 */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
 
 .screenshot-gallery figcaption {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 0.95rem;
+    /* color: #555; */
+    color: #616161; /* 调整图注颜色 */
 }
 
 footer {
     text-align: center;
-    margin-top: 3rem;
-    padding: 1.5rem;
-    background-color: #e8e8e8;
-    color: #555;
+    margin-top: 4rem;
+    padding: 2rem;
+    /* background-color: #e8e8e8; */
+    background-color: #eeeeee; /* Material 风格页脚背景 */
+    /* color: #555; */
+    color: #757575; /* 页脚文字颜色 */
     font-size: 0.9rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+/* 强调文本 */
+strong {
+    color: #0d47a1; /* 深蓝色强调 */
+    font-weight: 600;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    header p {
+        font-size: 1.1rem;
     }
     header nav a {
-        margin: 0 10px;
+        margin: 0 15px;
+        padding: 6px 0;
     }
-    .screenshot-gallery figure {
-        flex-basis: calc(50% - 1rem); /* 每行2个 */
+    main {
+        padding: 0 1rem;
     }
+    section {
+        padding: 2rem;
+    }
+    /* screenshot gallery grid 会自动调整，无需特别修改 */
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 2rem 1rem 1rem 1rem;
+    }
     header nav a {
         display: block;
         margin: 10px 0;
+        text-align: center;
     }
-    .screenshot-gallery figure {
-        flex-basis: 100%; /* 每行1个 */
+    section {
+        padding: 1.5rem;
     }
+    h2 {
+        font-size: 1.6rem;
+    }
+    .button {
+        padding: 12px 25px;
+        width: 100%; /* 移动端按钮占满宽度 */
+        box-sizing: border-box; /* 包含 padding */
+    }
+}
+
+/* 视频播放器样式调整 */
+video {
+    border: 1px solid #cfd8dc; /* 边框颜色调整 */
+    border-radius: 8px; /* 圆角调整 */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* 阴影调整 */
+    background-color: #ffffff; /* 背景设为白色 */
 }
