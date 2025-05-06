@@ -56,11 +56,6 @@
 *(详情请参见项目主页的"应用界面"部分)*
 
 *   ![App主界面](images/Page_1.png)
-*   ![注册过程](images/Page_2.png)
-*   ![登录过程（非本人声音）](images/Page_3.png)
-*   ![登录过程（伪造语音）](images/Page_4.png)
-*   ![登录过程（成功登录）](images/Page_5.png)
-*   ![登录界面](images/Page_6.png)
 
 ### 功能演示视频
 
