@@ -1,0 +1,32 @@
+.status-bar {
+  height: 24px; /* 安卓状态栏典型高度 */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* 半透明或纯色背景 */
+  color: #333; /* 图标和文字颜色 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px; /* 左右内边距 */
+  box-sizing: border-box; /* 让padding包含在宽度内 */
+  font-size: 12px; /* 较小的字体大小 */
+  position: absolute; /* 固定在屏幕顶部 */
+  top: 0;
+  left: 0;
+  z-index: 10; /* 确保在内容之上 */
+  border-top-left-radius: 25px; /* 匹配屏幕圆角 */
+  border-top-right-radius: 25px;
+}
+
+.status-bar-left,
+.status-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.status-bar-right span {
+  margin-left: 6px; /* 图标之间的间距 */
+}
+
+.icon {
+  font-size: 14px; /* 图标可以稍微大一点 */
+} 

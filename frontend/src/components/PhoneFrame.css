@@ -1,0 +1,39 @@
+/* 外层容器，用于居中 */
+.outer-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 占据整个视口高度 */
+  background-color: #e0e0e0; /* 背景颜色 */
+  padding: 20px;
+}
+
+/* 模拟手机的物理外壳 */
+.inner-frame {
+  width: 360px; /* 稍作调整以适应Android常见尺寸 */
+  height: 740px; /* 稍作调整 */
+  background-color: #1c1c1e;
+  border-radius: 0; /* 直角 */
+  padding: 10px; /* 调整边框 */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* 模拟手机屏幕区域 */
+.screen {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff; /* 将屏幕背景设为白色 */
+  border-radius: 0; /* 直角 */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 应用内容区域 */
+.content-area {
+  flex-grow: 1; /* 占据剩余的所有空间 */
+  overflow-y: auto; /* 如果内容超出，允许垂直滚动 */
+  background-color: #f5f5f5; /* 设置内容区域的浅灰背景 */
+} 
